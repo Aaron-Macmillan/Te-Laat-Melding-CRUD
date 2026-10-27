@@ -1,0 +1,385 @@
+/* ============================================
+   Te laat melding - Professioneel donker thema
+   ============================================ */
+
+:root {
+    /* Kleuren */
+    --bg-dark: #1a1d23;
+    --bg-card: #252932;
+    --bg-card-hover: #2d323b;
+    --bg-input: #2d323b;
+    --border: #3a3f4b;
+    --border-focus: #4a90d9;
+    
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --text-muted: #6b7280;
+    
+    --accent-blue: #4a90d9;
+    --accent-blue-hover: #3b7bc7;
+    --accent-green: #34a853;
+    --accent-green-hover: #2d9249;
+    --accent-red: #ea4335;
+    --accent-red-hover: #d33426;
+    --accent-orange: #f9ab00;
+    
+    --success-bg: rgba(52, 168, 83, 0.2);
+    --success-border: #34a853;
+    --error-bg: rgba(234, 67, 53, 0.2);
+    --error-border: #ea4335;
+    
+    /* Spacing & typography */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
+    --transition: 0.2s ease;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #22262e 100%);
+    color: var(--text-primary);
+    margin: 0;
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.01em;
+}
+
+/* Layout */
+.page-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.page-wrapper--narrow {
+    max-width: 520px;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+/* Cards & containers */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+/* Messages */
+.alert {
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.25rem;
+    border-left: 4px solid;
+}
+
+.alert-error {
+    background: var(--error-bg);
+    border-color: var(--error-border);
+    color: #f8c4bf;
+}
+
+.alert-error ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+}
+
+.alert-success {
+    background: var(--success-bg);
+    border-color: var(--success-border);
+    color: #b8e6c4;
+}
+
+/* Table */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+}
+
+th, td {
+    padding: 0.875rem 1.25rem;
+    text-align: left;
+}
+
+th {
+    background: rgba(0, 0, 0, 0.25);
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+tr {
+    border-bottom: 1px solid var(--border);
+    transition: background var(--transition);
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+tr:hover {
+    background: var(--bg-card-hover);
+}
+
+/* Minuten formatting */
+.min-normaal { color: var(--text-muted); }
+.min-rood-tekst { color: var(--accent-red); font-weight: 500; }
+.min-rood-achtergrond {
+    background: var(--accent-red);
+    color: white;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-family: inherit;
+}
+
+.btn-sm {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8125rem;
+}
+
+.btn-wijzig {
+    background: var(--accent-blue);
+    color: white;
+    margin-right: 0.5rem;
+}
+
+.btn-wijzig:hover {
+    background: var(--accent-blue-hover);
+    transform: translateY(-1px);
+}
+
+.btn-verwijder {
+    background: var(--accent-red);
+    color: white;
+}
+
+.btn-verwijder:hover {
+    background: var(--accent-red-hover);
+    transform: translateY(-1px);
+}
+
+.btn-add {
+    background: var(--accent-green);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-add:hover {
+    background: var(--accent-green-hover);
+    transform: translateY(-1px);
+}
+
+.btn-submit {
+    background: var(--accent-blue);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-submit:hover {
+    background: var(--accent-blue-hover);
+    transform: translateY(-1px);
+}
+
+.btn-submit.btn-green {
+    background: var(--accent-green);
+}
+
+.btn-submit.btn-green:hover {
+    background: var(--accent-green-hover);
+}
+
+.btn-annuleer {
+    background: var(--text-muted);
+    color: white;
+}
+
+.btn-annuleer:hover {
+    background: var(--text-secondary);
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+}
+
+.btn-back:hover {
+    color: #6ba8f0;
+}
+
+/* Action buttons group */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--text-muted);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.2);
+}
+
+input.invalid, textarea.invalid {
+    border-color: var(--accent-red);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Statistics */
+.statistieken {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.statistieken h2 {
+    margin: 0 0 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.statistieken p {
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.statistieken strong {
+    color: var(--text-primary);
+}
+
+/* Empty state */
+.geen-meldingen {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-lg);
+}
+
+/* Confirmation block */
+.bevestiging {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.bevestiging p {
+    margin: 0.6rem 0;
+    color: var(--text-secondary);
+}
+
+.bevestiging strong {
+    display: inline-block;
+    min-width: 150px;
+    color: var(--text-primary);
+}
+
+/* Form actions */
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .page-wrapper {
+        padding: 1rem;
+    }
+    
+    th, td {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+}
